@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Verschlüsselte Ein/Ausgabe Extension</title>
+  <meta charset="UTF-8">
+ <link rel="stylesheet" href="/static/styles/popup.css">
+</head>
+<body>
+  <h2>Verschlüsselte Ein/Ausgabe Extension</h2>
+  
+  <div id="login-form">
+    <p>Bitte geben Sie Ihr Passwort ein, um verschlüsselte Inhalte anzuzeigen und zu bearbeiten.</p>
+    <input type="password" id="password" placeholder="Passwort eingeben">
+    <button id="login-button">Anmelden</button>
+  </div>
+  
+  <div id="setup-section" class="hidden">
+    <p>Es wurde noch kein Passwort konfiguriert. Erstellen Sie ein neues Passwort:</p>
+    <input type="password" id="new-password" placeholder="Neues Passwort">
+    <input type="password" id="confirm-password" placeholder="Passwort bestätigen">
+    <button id="setup-button">Passwort erstellen</button>
+  </div>
+  
+  <div id="logged-in-view" class="hidden">
+    <p>Status: <span id="status-text">Angemeldet</span></p>
+    <p>Verschlüsselte Inhalte werden automatisch entschlüsselt.</p>
+    <!-- <button id="encrypt-selection-button">Auswahl verschlüsseln</button> -->
+    <button id="logout-button">Abmelden</button>
+  </div>
+  
+  <div id="status-message" class="status hidden"></div>
+  
+  <script src="/static/scripts/popup.js"></script>
+</body>
+</html>
