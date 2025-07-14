@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html> 
 <head>
   <title>Verschlüsselte Ein/Ausgabe Extension</title>
   <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 </head>
 <body>
   <h2>Verschlüsselte Ein/Ausgabe Extension</h2>
-  
+ 
   <div id="login-form">
     <p>Bitte geben Sie Ihr Passwort ein, um verschlüsselte Inhalte anzuzeigen und zu bearbeiten.</p>
     <input type="password" id="password" placeholder="Passwort eingeben">
@@ -31,5 +31,20 @@
   <div id="status-message" class="status hidden"></div>
   
   <script src="/static/scripts/popup.js"></script>
+
+  <!-- <hr>
+<button id="copyPublicKeyBtn">📋 کپی کلید عمومی</button>
+<textarea id="publicKeyOut" readonly rows="4" style="width:100%; font-family:monospace;"></textarea> -->
+
+
+<hr>
+<h3>🔐Einfacher Encoder</h3>
+<label>Zu verschlüsselnder Text:</label>
+<textarea id="encryptTextInput" rows="3" style="width:100%; font-family:inherit;"></textarea>
+<button id="encryptBtn">Verschlüsselung
+  </button>
+<textarea id="encryptedOutput" readonly rows="4" style="width:100%; font-family:monospace; margin-top:5px;"></textarea>
+
+
 </body>
 </html>

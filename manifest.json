@@ -1,31 +1,51 @@
-
 {
   "manifest_version": 3,
-  "name": "Verschlüsselte Ein/Ausgabe Extension",
-  "version": "1.3",
+  "name": "Verschlüsselte Ein/Ausgabe Extension 2",
+  "version": "1.4",
   "description": "Verschlüsselt und entschlüsselt Inhalte auf Webseiten",
-  "permissions": ["storage", "activeTab", "scripting"],
+
+  "background": {                       // ← اضافه کنید
+    "service_worker": "static/scripts/background.js"
+  },
+
+  "permissions": [
+    "storage",
+    "scripting",
+    "tabs",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "http://localhost/mediawiki/*"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["http://localhost/mediawiki/*"],
+      "js": ["static/scripts/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "/static/images/icon16.png",
-      "48": "/static/images/icon48.png",
-      "128": "/static/images/icon128.png"
+      "16": "static/images/icon16.png",
+      "48": "static/images/icon48.png",
+      "128": "static/images/icon128.png"
     }
   },
-  "host_permissions": [
-    "<all_urls>"
-  ],
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["/static/scripts/content.js"]
-    }
-  ],
-  "icons": {
-    "16": "/static/images/icon16.png",
-    "48": "/static/images/icon48.png",
-    "128": "/static/images/icon128.png"
-  }
-}
 
+  "icons": {
+    "16": "static/images/icon16.png",
+    "48": "static/images/icon48.png",
+    "128": "static/images/icon128.png"
+  },
+
+  "web_accessible_resources": [
+    {
+      "resources": ["static/styles/popup.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+  
+}
